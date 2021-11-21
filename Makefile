@@ -2,34 +2,44 @@ CC = gcc
 
 NAME = push_swap.a
 
-PRINTFNAME = libftprintf.a
+LIBFTNAME = libft.a
 
-PRINTFPATH = ./printf
+LIBFTPATH = ./libft
 
 CFLAGS = -Werror -Wall -Wextra
 
-OBJS := $(*.o)
+SRCS_LIST = 
 
-SRC = ./src/*.c
+FOLDER = src
+
+SRCS = $(addprefix ${FOLDER}/, ${SRCS_LIST})
+
+OBJS = ${SRCS:.c=.o}
 
 
 all: $(NAME)
 .PHONY: all
 
-${NAME}: fclean
-	@make -C ${PRINTFPATH}
-	@mv $(PRINTFPATH)/${PRINTFNAME} ${PRINTFNAME}
-	@${CC} ${CFLAGS} ${SRC} ${PRINTFNAME} main.c -o ${NAME}
+$(NAME): $(OBJS)
+	@$(MAKE) -C $(LIBFTPATH)
+	@cp $(LIBFTPATH)/$(LIBFTNAME) $(NAME)
+	@ar -rcs $(NAME) $(OBJS)
 .PHONY: ${NAME}
 
 clean:
+	@$(MAKE) -C $(LIBFTPATH) clean
 	@rm -rf *.o
 .PHONY: clean
 
 fclean: clean
+	@$(MAKE) -C $(LIBFTPATH) fclean
 	@rm -f $(NAME)
-	@rm -f $(PRINTFNAME)
 .PHONY: fclean
 
-re: fclean ${NAME}
+re: fclean all
 .PHONY: re
+
+test:
+	@gcc $(CFLAGS) main.c ./$(NAME) \
+	&& ./a.out \
+	&& rm ./a.out
