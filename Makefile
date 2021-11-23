@@ -8,7 +8,7 @@ LIBFTPATH = ./libft
 
 CFLAGS = -Werror -Wall -Wextra
 
-SRCS_LIST = ft_initiate_stack.c ft_is_sorted.c ft_print_lst.c
+SRCS_LIST = ft_initiate_stack.c ft_is_sorted.c ft_print_lst.c ft_swap.c
 
 FOLDER = src
 
