@@ -11,8 +11,8 @@ ft_printf_putchar.c ft_printf_print.c ft_printf_print_p_str.c \
 ft_printf_print_c.c ft_printf_isflag.c ft_printf_empty_zeros.c ft_ptoa.c \
 ft_printf_get_flag.c ft_printf_newflag.c to_string.c ft_ctoa.c ft_printf.c \
 ft_utoa.c \
-ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c \
-ft_lstnew.c ft_lstsize.c ft_lstlast.c
+ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstiter.c ft_lstnew.c \
+ft_lstsize.c ft_lstlast.c ft_lstpop_front.c ft_lstpop_back.c
 
 FOLDER = src
 

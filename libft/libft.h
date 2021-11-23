@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 20:11:25 by vcordeir          #+#    #+#             */
-/*   Updated: 2021/11/21 20:48:30 by vcordeir         ###   ########.fr       */
+/*   Updated: 2021/11/23 18:42:03 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,8 @@ t_flags				*ft_printf_newflag(void);
 void				to_string(const char *f, va_list args, t_flags ***lst);
 void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstadd_front(t_list **lst, t_list *new);
+int         ft_lstpop_back(t_list **lst);
+int         ft_lstpop_front(t_list **lst);
 void				ft_lstclear(t_list **lst);
 void				ft_lstdelone(t_list *lst);
 void				ft_lstiter(t_list *lst, void (*f)(int));
