@@ -8,7 +8,7 @@ LIBFTPATH = ./libft
 
 CFLAGS = -Werror -Wall -Wextra
 
-SRCS_LIST = 
+SRCS_LIST = ft_initiate_stack.c ft_is_sorted.c ft_print_lst.c
 
 FOLDER = src
 
@@ -28,6 +28,7 @@ $(NAME): $(OBJS)
 
 clean:
 	@$(MAKE) -C $(LIBFTPATH) clean
+	@rm -f $(OBJS)
 	@rm -rf *.o
 .PHONY: clean
 
@@ -40,6 +41,6 @@ re: fclean all
 .PHONY: re
 
 test:
-	@gcc $(CFLAGS) main.c ./$(NAME) \
-	&& ./a.out \
+	@gcc $(CFLAGS) ./$(NAME) main.c \
+	&& ./a.out $(ARGS) \
 	&& rm ./a.out
