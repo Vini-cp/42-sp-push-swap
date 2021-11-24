@@ -8,8 +8,8 @@ LIBFTPATH = ./libft
 
 CFLAGS = -Werror -Wall -Wextra
 
-SRCS_LIST = ft_initiate_stack.c ft_is_sorted.c ft_print_lst.c ft_movements.c\
-ft_swap.c ft_push.c ft_rotate.c ft_reverse_rotate.c
+SRCS_LIST = ft_initiate_stack.c ft_is_sorted.c ft_print_lst.c ft_check_numbers.c\
+ft_movements.c ft_swap.c ft_push.c ft_rotate.c ft_reverse_rotate.c
 
 FOLDER = src
 
@@ -24,7 +24,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@$(MAKE) -C $(LIBFTPATH)
 	@cp $(LIBFTPATH)/$(LIBFTNAME) $(NAME)
-	@ar -rcs $(NAME) $(OBJS)
+	@ar -rs $(NAME) $(OBJS)
 .PHONY: ${NAME}
 
 clean:
