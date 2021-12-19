@@ -1,3 +1,4 @@
 *.a
 *.o
 *.out
+src/ft_print_lst.c
