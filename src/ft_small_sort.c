@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 21:43:33 by vcordeir          #+#    #+#             */
-/*   Updated: 2021/12/01 22:05:37 by vcordeir         ###   ########.fr       */
+/*   Updated: 2021/12/19 20:13:13 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,37 +19,31 @@ static int	compare(int a, int b)
 	return (0);
 }
 
-static void	get_comparison(int *fst, int *scd, int *trd, t_list *lst)
+void	ft_small_sort(t_list **a, t_list **b)
 {
-	*fst = compare(lst->content, lst->next->content);
-	*scd = compare(lst->next->content, lst->next->next->content);
-	*trd = compare(lst->content, lst->next->next->content);
-}
-
-void	ft_small_sort(t_list *a, t_list *b)
-{
-	int	fst_compare;
-	int	scd_compare;
-	int	trd_compare;
-
-	if (!ft_is_sorted(a))
+	if (!ft_is_sorted(*a))
 	{
-		get_comparison(&fst_compare, &scd_compare, &trd_compare, a);
-		if (fst_compare && !scd_compare && !trd_compare)
-			ft_movements(&a, &b, "sa");
-		else if (fst_compare && scd_compare && trd_compare)
+		if (ft_lstsize(*a) == 2)
+			ft_movements(a, b, "sa");
+		else
 		{
-			ft_movements(&a, &b, "sa");
-			ft_movements(&a, &b, "rra");
+			if (!compare((*a)->content, (*a)->next->content))
+			{
+				ft_movements(a, b, "rra");
+				if (compare((*a)->content, (*a)->next->content))
+					ft_movements(a, b, "sa");
+			}
+			else
+			{
+				if (!compare((*a)->content, (*a)->next->next->content))
+					ft_movements(a, b, "sa");
+				else
+				{
+					ft_movements(a, b, "ra");
+					if (compare((*a)->content, (*a)->next->content))
+						ft_movements(a, b, "sa");
+				}
+			}
 		}
-		else if (fst_compare && !scd_compare && trd_compare)
-			ft_movements(&a, &b, "ra");
-		else if (!fst_compare && scd_compare && !trd_compare)
-		{
-			ft_movements(&a, &b, "sa");
-			ft_movements(&a, &b, "ra");
-		}
-		else if (!fst_compare && scd_compare && trd_compare)
-			ft_movements(&a, &b, "rra");
 	}
 }
