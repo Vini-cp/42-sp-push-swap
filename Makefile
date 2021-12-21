@@ -9,7 +9,8 @@ LIBFTPATH = ./libft
 CFLAGS = -Werror -Wall -Wextra
 
 SRCS_LIST = ft_initiate_stack.c ft_is_sorted.c ft_check_numbers.c ft_movements.c\
-ft_swap.c ft_push.c ft_rotate.c ft_reverse_rotate.c ft_small_sort.c\
+ft_swap.c ft_push.c ft_rotate.c ft_reverse_rotate.c ft_get_smallest_number.c \
+ft_small_sort.c ft_medium_sort.c \
 ft_print_lst.c
 
 FOLDER = src
@@ -44,5 +45,4 @@ re: fclean all
 
 test:
 	@gcc $(CFLAGS) ./$(NAME) main.c -o push_swap\
-	&& ./push_swap $(ARGS) \
-	&& rm ./push_swap
+	&& leaks -atExit -- ./push_swap 2 1 3 6 5 8 \

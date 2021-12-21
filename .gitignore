@@ -2,3 +2,4 @@
 *.o
 *.out
 src/ft_print_lst.c
+push_swap
