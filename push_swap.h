@@ -11,7 +11,6 @@
 # define SPLIT_CHAR ' '
 
 t_list    *ft_initiate_stack(int argc, char *argv[]);
-void	  ft_print_lst(t_list *lst_a, t_list *lst_b);
 int     ft_check_numbers(int argc, char *argv[]);
 int     ft_is_sorted(t_list *lst);
 int     ft_get_smallest_no(t_list *lst);

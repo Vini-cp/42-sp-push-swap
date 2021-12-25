@@ -10,8 +10,7 @@ CFLAGS = -Werror -Wall -Wextra
 
 SRCS_LIST = ft_initiate_stack.c ft_is_sorted.c ft_check_numbers.c ft_movements.c \
 ft_swap.c ft_push.c ft_rotate.c ft_reverse_rotate.c ft_get_smallest_no.c ft_get_biggest_no.c \
-ft_small_sort.c ft_medium_sort.c ft_big_sort.c ft_parse_numbers.c ft_free.c ft_arraylen.c\
-ft_print_lst.c
+ft_small_sort.c ft_medium_sort.c ft_big_sort.c ft_parse_numbers.c ft_free.c ft_arraylen.c
 
 FOLDER = src
 
