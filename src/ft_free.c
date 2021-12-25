@@ -6,12 +6,11 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 15:12:01 by vcordeir          #+#    #+#             */
-/*   Updated: 2021/12/25 15:56:12 by vcordeir         ###   ########.fr       */
+/*   Updated: 2021/12/25 16:14:01 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include <stdio.h>
 
 static void	ft_free_array(char **str, int str_len)
 {
