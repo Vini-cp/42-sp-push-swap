@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 20:11:25 by vcordeir          #+#    #+#             */
-/*   Updated: 2021/12/19 20:43:19 by vcordeir         ###   ########.fr       */
+/*   Updated: 2021/12/25 14:51:50 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ int					ft_atoi(const char *str);
 int         ft_isspace(int c);
 int					ft_isdigit(int c);
 size_t				ft_strlen(const char *s);
+size_t        ft_strlcpy(char *dst, const char *src, size_t size);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
+char        *ft_strdup(const char *s);
 void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 int         ft_lstpop_back(t_list **lst);
