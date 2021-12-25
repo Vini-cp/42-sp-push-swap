@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 19:02:08 by vcordeir          #+#    #+#             */
-/*   Updated: 2021/12/20 21:08:25 by vcordeir         ###   ########.fr       */
+/*   Updated: 2021/12/25 12:27:26 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,10 @@ void	ft_medium_sort(t_list **a, t_list **b)
 {
 	int smallest_number;
 	int	position;
-	int i = 10;
 
-	while (ft_lstsize(*a) > 3 && i > 0)
+	while (ft_lstsize(*a) > 3)
 	{
-		smallest_number = ft_get_smallest_number(*a);
+		smallest_number = ft_get_smallest_no(*a);
 		position = ft_get_number_position(*a, smallest_number);
 		if (position <= ft_lstsize(*a) / 2)
 			while (position--)
@@ -50,7 +49,6 @@ void	ft_medium_sort(t_list **a, t_list **b)
 			while (position++ < ft_lstsize(*a))
 				ft_movements(a, b, "rra");
 		ft_movements(a, b, "pb");
-		i--;
 	}
 	ft_small_sort(a, b);
 	ft_empty_b_stack(a, b);
