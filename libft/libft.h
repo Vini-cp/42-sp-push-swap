@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 20:11:25 by vcordeir          #+#    #+#             */
-/*   Updated: 2021/12/25 14:51:50 by vcordeir         ###   ########.fr       */
+/*   Updated: 2021/12/25 15:04:40 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ void				ft_lstiter(t_list *lst, void (*f)(int));
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstnew(int content);
 int					ft_lstsize(t_list *lst);
+char	      **ft_split(char const *s, char c);
 
 #endif
