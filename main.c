@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 21:48:28 by vcordeir          #+#    #+#             */
-/*   Updated: 2021/12/19 20:50:20 by vcordeir         ###   ########.fr       */
+/*   Updated: 2021/12/25 12:21:53 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,19 @@ int main(int argc, char *argv[])
 
 	if (!ft_check_numbers(argc, argv))
 	{
-		ft_printf("ERROR\n");
+		write(1, "ERROR\n", 6);
 		return (0);
 	}
 	a = ft_initiate_stack(argc, argv);
-	b = ft_lstnew(9);
-	// ft_print_lst(a, b);
+	b = NULL;
 	if (argc - 1 <= SMALL_THRESHOLD)
 		ft_small_sort(&a, &b);
-	// ft_print_lst(a, b);
-	// else if (argc - 1 < MEDIUM_THRESHOLD)
-	// 	ft_medium_sort(a, b);
-	// else if (argc - 1 < BIG_THRESHOLD)
-	// 	ft_big_sort(a, b);
-	// else
-	// 	ft_large_sort(a, b);
+	else if (argc - 1 < MEDIUM_THRESHOLD)
+		ft_medium_sort(&a, &b);
+	else
+		ft_big_sort(&a, &b);
+	if (a)
+		ft_lstclear(&a);
+	if (b)
+		ft_lstclear(&b);
 }
