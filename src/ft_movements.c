@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_movements.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 22:56:00 by vcordeir          #+#    #+#             */
-/*   Updated: 2021/12/19 20:29:33 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/02/06 02:07:27 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	ft_rr(t_list **a, t_list **b, char *mov)
 		ft_reverse_rotate(b);
 }
 
-void ft_movements(t_list **a, t_list **b, char *mov)
+void	ft_movements(t_list **a, t_list **b, char *mov)
 {
 	write(1, mov, 3);
 	write(1, "\n", 1);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_medium_sort.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 19:02:08 by vcordeir          #+#    #+#             */
-/*   Updated: 2021/12/25 12:27:26 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/02/06 02:03:01 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_get_number_position(t_list *lst, int no)
 {
-	int position;
+	int	position;
 
 	position = 0;
 	while (lst->next)
@@ -35,7 +35,7 @@ static void	ft_empty_b_stack(t_list **a, t_list **b)
 
 void	ft_medium_sort(t_list **a, t_list **b)
 {
-	int smallest_number;
+	int	smallest_number;
 	int	position;
 
 	while (ft_lstsize(*a) > 3)

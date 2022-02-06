@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 20:11:25 by vcordeir          #+#    #+#             */
-/*   Updated: 2021/12/25 15:04:40 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/02/06 02:08:16 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,23 @@ typedef struct s_list
 }	t_list;
 
 int					ft_atoi(const char *str);
-int         ft_isspace(int c);
+int					ft_isspace(int c);
 int					ft_isdigit(int c);
 size_t				ft_strlen(const char *s);
-size_t        ft_strlcpy(char *dst, const char *src, size_t size);
+size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
-char        *ft_strdup(const char *s);
+char				*ft_strdup(const char *s);
 void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstadd_front(t_list **lst, t_list *new);
-int         ft_lstpop_back(t_list **lst);
-int         ft_lstpop_front(t_list **lst);
+int					ft_lstpop_back(t_list **lst);
+int					ft_lstpop_front(t_list **lst);
 void				ft_lstclear(t_list **lst);
 void				ft_lstdelone(t_list *lst);
 void				ft_lstiter(t_list *lst, void (*f)(int));
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstnew(int content);
 int					ft_lstsize(t_list *lst);
-char	      **ft_split(char const *s, char c);
+char				**ft_split(char const *s, char c);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 19:34:45 by vcordeir          #+#    #+#             */
-/*   Updated: 2021/11/23 21:39:15 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/02/06 02:00:28 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_push(t_list **lst_a, t_list **lst_b)
 {
-	int content;
+	int	content;
 
 	if (*lst_b != NULL)
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_big_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 21:37:33 by vcordeir          #+#    #+#             */
-/*   Updated: 2021/12/25 12:22:26 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/02/06 01:59:27 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	get_first_smallest_no(t_list *lst, int chunk, int no_chunk)
 {
-	int position;
-	
+	int	position;
+
 	position = 0;
 	while (lst->next)
 	{
@@ -29,9 +29,9 @@ static int	get_first_smallest_no(t_list *lst, int chunk, int no_chunk)
 
 static int	get_last_smallest_no(t_list *lst, int chunk, int no_chunk)
 {
-	int position;
-	int i;
-	
+	int	position;
+	int	i;
+
 	i = 0;
 	position = 0;
 	while (lst->next)
@@ -46,12 +46,12 @@ static int	get_last_smallest_no(t_list *lst, int chunk, int no_chunk)
 
 static int	get_first_biggest_no(t_list *lst)
 {
-	int position;
-	int number;
-	int i;
-	
+	int	position;
+	int	number;
+	int	i;
+
 	i = 0;
-	position = 0;	
+	position = 0;
 	number = lst->content;
 	while (lst && i < CHUNCK_NO)
 	{
@@ -69,8 +69,8 @@ static int	get_first_biggest_no(t_list *lst)
 static void	move_no_to_stack_b(t_list **a, t_list **b, int size, int chunk)
 {
 	int	i;
-	int smallest_pos;
-	int biggest_pos;
+	int	smallest_pos;
+	int	biggest_pos;
 	int	lst_size;
 
 	smallest_pos = get_first_smallest_no(*a, size, chunk);
@@ -90,8 +90,8 @@ static void	move_no_to_stack_b(t_list **a, t_list **b, int size, int chunk)
 
 static void	move_no_to_stack_a(t_list **a, t_list **b)
 {
-	int i;
-	int first_biggest;
+	int	i;
+	int	first_biggest;
 
 	first_biggest = get_first_biggest_no(*b);
 	if (first_biggest == 1)
@@ -113,8 +113,8 @@ static void	move_no_to_stack_a(t_list **a, t_list **b)
 
 void	ft_big_sort(t_list **a, t_list **b)
 {
-	int chunk_size;
-	int chunks;
+	int	chunk_size;
+	int	chunks;
 	int	i;
 
 	chunk_size = (ft_get_biggest_no(*a) + ft_get_smallest_no(*a)) / CHUNCK_NO + 1;

@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 21:56:37 by vcordeir          #+#    #+#             */
-/*   Updated: 2021/12/25 16:07:45 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/02/06 02:00:09 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int ft_is_integer(int len, char **str)
+static int	ft_is_integer(int len, char **str)
 {
-	int i;
-	int j;
-	int str_len;
+	int	i;
+	int	j;
+	int	str_len;
 
 	i = 0;
 	while (i < len)
@@ -39,11 +39,11 @@ static int ft_is_integer(int len, char **str)
 	return (TRUE);
 }
 
-static int ft_is_duplicate(int len, char **str)
+static int	ft_is_duplicate(int len, char **str)
 {
-	int i;
-	int j;
-	int number;
+	int	i;
+	int	j;
+	int	number;
 
 	i = 0;
 	while (i < len)
@@ -61,7 +61,7 @@ static int ft_is_duplicate(int len, char **str)
 	return (TRUE);
 }
 
-int ft_check_numbers(int len, char **str)
+int	ft_check_numbers(int len, char **str)
 {
 	if (!ft_is_integer(len, str))
 		return (FALSE);

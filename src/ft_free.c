@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/25 15:12:01 by vcordeir          #+#    #+#             */
-/*   Updated: 2021/12/25 16:14:01 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/02/06 02:04:44 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	ft_free_array(char **str, int str_len)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < str_len)
