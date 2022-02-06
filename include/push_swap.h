@@ -6,14 +6,14 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 01:57:31 by coder             #+#    #+#             */
-/*   Updated: 2022/02/06 01:57:32 by coder            ###   ########.fr       */
+/*   Updated: 2022/02/06 21:18:06 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include "../libft/libft.h"
 
 # define TRUE 1
 # define FALSE 0

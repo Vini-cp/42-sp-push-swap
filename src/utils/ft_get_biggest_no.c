@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arraylen.c                                      :+:      :+:    :+:   */
+/*   ft_get_biggest_no.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/25 16:09:10 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/02/06 02:02:04 by coder            ###   ########.fr       */
+/*   Created: 2021/12/22 17:54:40 by vcordeir          #+#    #+#             */
+/*   Updated: 2022/02/06 21:20:24 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../include/push_swap.h"
 
-int	ft_arraylen(char **str)
+int	ft_get_biggest_no(t_list *lst)
 {
-	int	i;
+	int	number;
 
-	i = 0;
-	while (str[i] != NULL)
-		i++;
-	return (i);
+	number = lst->content;
+	while (lst->next)
+	{
+		lst = lst->next;
+		if (lst->content > number)
+			number = lst->content;
+	}
+	return (number);
 }

@@ -6,11 +6,11 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 19:02:08 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/02/06 02:03:01 by coder            ###   ########.fr       */
+/*   Updated: 2022/02/06 21:19:59 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../include/push_swap.h"
 
 static int	ft_get_number_position(t_list *lst, int no)
 {

@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push.c                                          :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 19:34:45 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/02/06 02:00:28 by coder            ###   ########.fr       */
+/*   Created: 2021/12/25 15:12:01 by vcordeir          #+#    #+#             */
+/*   Updated: 2022/02/06 21:20:22 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../include/push_swap.h"
 
-void	ft_push(t_list **lst_a, t_list **lst_b)
+static void	ft_free_array(char **str, int str_len)
 {
-	int	content;
+	int	i;
 
-	if (*lst_b != NULL)
+	i = 0;
+	while (i < str_len)
 	{
-		content = ft_lstpop_front(lst_b);
-		ft_lstadd_front(lst_a, ft_lstnew(content));
+		free(str[i]);
+		i++;
 	}
+	free(str);
+}
+
+void	ft_free(t_list **a, t_list **b, char **str, int str_len)
+{
+	if (*a)
+		ft_lstclear(a);
+	if (*b)
+		ft_lstclear(b);
+	ft_free_array(str, str_len);
 }

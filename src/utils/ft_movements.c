@@ -6,11 +6,11 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 22:56:00 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/02/06 02:07:27 by coder            ###   ########.fr       */
+/*   Updated: 2022/02/06 21:20:35 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../include/push_swap.h"
 
 static void	ft_sw(t_list **a, t_list **b, char *mov)
 {

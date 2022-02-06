@@ -6,11 +6,11 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 21:37:33 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/02/06 01:59:27 by coder            ###   ########.fr       */
+/*   Updated: 2022/02/06 21:20:06 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../include/push_swap.h"
 
 static int	get_first_smallest_no(t_list *lst, int chunk, int no_chunk)
 {

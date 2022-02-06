@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sorted.c                                     :+:      :+:    :+:   */
+/*   ft_arraylen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 18:51:50 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/02/06 02:07:03 by coder            ###   ########.fr       */
+/*   Created: 2021/12/25 16:09:10 by vcordeir          #+#    #+#             */
+/*   Updated: 2022/02/06 21:20:12 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../include/push_swap.h"
 
-int	ft_is_sorted(t_list *lst)
+int	ft_arraylen(char **str)
 {
-	while (lst->next)
-	{
-		if (lst->content > lst->next->content)
-			return (FALSE);
-		lst = lst->next;
-	}
-	return (TRUE);
+	int	i;
+
+	i = 0;
+	while (str[i] != NULL)
+		i++;
+	return (i);
 }

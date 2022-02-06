@@ -6,11 +6,11 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 21:56:37 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/02/06 02:00:09 by coder            ###   ########.fr       */
+/*   Updated: 2022/02/06 21:20:19 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../include/push_swap.h"
 
 static int	ft_is_integer(int len, char **str)
 {

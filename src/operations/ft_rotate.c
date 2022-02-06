@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_reverse_rotate.c                                :+:      :+:    :+:   */
+/*   ft_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 19:41:22 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/02/06 02:00:55 by coder            ###   ########.fr       */
+/*   Created: 2021/11/23 19:40:10 by vcordeir          #+#    #+#             */
+/*   Updated: 2022/02/06 21:19:43 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../include/push_swap.h"
 
-void	ft_reverse_rotate(t_list **lst)
+void	ft_rotate(t_list **lst)
 {
-	int	last_element;
+	int	first_element;
 
-	last_element = ft_lstpop_back(lst);
-	ft_lstadd_front(lst, ft_lstnew(last_element));
+	first_element = ft_lstpop_front(lst);
+	ft_lstadd_back(lst, ft_lstnew(first_element));
 }

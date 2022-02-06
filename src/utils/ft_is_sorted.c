@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_is_sorted.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 19:17:13 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/02/06 02:01:27 by coder            ###   ########.fr       */
+/*   Created: 2021/11/23 18:51:50 by vcordeir          #+#    #+#             */
+/*   Updated: 2022/02/06 21:20:34 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../include/push_swap.h"
 
-void	ft_swap(t_list **lst)
+int	ft_is_sorted(t_list *lst)
 {
-	int	first_element;
-	int	second_element;
-
-	if (ft_lstsize(*lst) > 1)
+	while (lst->next)
 	{
-		first_element = ft_lstpop_front(lst);
-		second_element = ft_lstpop_front(lst);
-		ft_lstadd_front(lst, ft_lstnew(first_element));
-		ft_lstadd_front(lst, ft_lstnew(second_element));
+		if (lst->content > lst->next->content)
+			return (FALSE);
+		lst = lst->next;
 	}
+	return (TRUE);
 }

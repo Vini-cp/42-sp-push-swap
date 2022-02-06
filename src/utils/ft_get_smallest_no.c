@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_get_smallest_no.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/25 13:02:53 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/02/06 02:06:52 by coder            ###   ########.fr       */
+/*   Created: 2021/12/20 18:55:43 by vcordeir          #+#    #+#             */
+/*   Updated: 2022/02/06 21:20:27 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../include/push_swap.h"
 
-char	**ft_parse_numbers(int argc, char *argv[])
+int	ft_get_smallest_no(t_list *lst)
 {
-	char	**str;
-	int		i;
+	int	number;
 
-	if (argc > 2)
+	number = lst->content;
+	while (lst->next)
 	{
-		i = 1;
-		str = malloc((argc - 1) * sizeof(char *));
-		while (i < argc)
-		{
-			str[i - 1] = ft_strdup(argv[i]);
-			i++;
-		}
+		lst = lst->next;
+		if (lst->content < number)
+			number = lst->content;
 	}
-	else if (argc == 2)
-		str = ft_split(argv[1], SPLIT_CHAR);
-	else
-		str = NULL;
-	return (str);
+	return (number);
 }

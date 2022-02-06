@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_smallest_no.c                               :+:      :+:    :+:   */
+/*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 18:55:43 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/02/06 02:07:36 by coder            ###   ########.fr       */
+/*   Created: 2021/11/23 19:34:45 by vcordeir          #+#    #+#             */
+/*   Updated: 2022/02/06 21:19:45 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../include/push_swap.h"
 
-int	ft_get_smallest_no(t_list *lst)
+void	ft_push(t_list **lst_a, t_list **lst_b)
 {
-	int	number;
+	int	content;
 
-	number = lst->content;
-	while (lst->next)
+	if (*lst_b != NULL)
 	{
-		lst = lst->next;
-		if (lst->content < number)
-			number = lst->content;
+		content = ft_lstpop_front(lst_b);
+		ft_lstadd_front(lst_a, ft_lstnew(content));
 	}
-	return (number);
 }

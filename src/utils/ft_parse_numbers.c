@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_initiate_stack.c                                :+:      :+:    :+:   */
+/*   ft_parse_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/21 22:55:47 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/02/06 02:01:20 by coder            ###   ########.fr       */
+/*   Created: 2021/12/25 13:02:53 by vcordeir          #+#    #+#             */
+/*   Updated: 2022/02/06 21:20:39 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../include/push_swap.h"
 
-t_list	*ft_initiate_stack(int len, char **str)
+char	**ft_parse_numbers(int argc, char *argv[])
 {
+	char	**str;
 	int		i;
-	t_list	*lst;
 
-	i = 0;
-	lst = NULL;
-	while (i < len)
+	if (argc > 2)
 	{
-		ft_lstadd_back(&lst, ft_lstnew(ft_atoi(str[i])));
-		i++;
+		i = 1;
+		str = malloc((argc - 1) * sizeof(char *));
+		while (i < argc)
+		{
+			str[i - 1] = ft_strdup(argv[i]);
+			i++;
+		}
 	}
-	return (lst);
+	else if (argc == 2)
+		str = ft_split(argv[1], SPLIT_CHAR);
+	else
+		str = NULL;
+	return (str);
 }

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_small_sort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 21:43:33 by vcordeir          #+#    #+#             */
-/*   Updated: 2021/12/19 20:13:13 by vcordeir         ###   ########.fr       */
+/*   Updated: 2022/02/06 21:19:54 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../include/push_swap.h"
 
 static int	compare(int a, int b)
 {
