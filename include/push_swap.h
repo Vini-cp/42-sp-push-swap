@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 01:57:31 by coder             #+#    #+#             */
-/*   Updated: 2022/02/06 21:18:06 by coder            ###   ########.fr       */
+/*   Updated: 2022/02/07 01:29:32 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		ft_check_numbers(int argc, char *argv[]);
 int		ft_is_sorted(t_list *lst);
 int		ft_get_smallest_no(t_list *lst);
 int		ft_get_biggest_no(t_list *lst);
-int		ft_arraylen(char **str);
+int		ft_exit_error(t_list **a, t_list **b, char **numbers, int size);
 void	ft_swap(t_list **lst);
 void	ft_push(t_list **lst_a, t_list **lst_b);
 void	ft_rotate(t_list **lst);
@@ -37,6 +37,7 @@ void	ft_small_sort(t_list **a, t_list **b);
 void	ft_medium_sort(t_list **a, t_list **b);
 void	ft_big_sort(t_list **a, t_list **b);
 void	ft_free(t_list **a, t_list **b, char **str, int str_len);
+void	ft_sort(t_list **a, t_list **b, char **numbers, int size);
 char	**ft_parse_numbers(int argc, char *argv[]);
 
 #endif

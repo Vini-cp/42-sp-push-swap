@@ -6,3 +6,4 @@ push_swap
 checker_mac
 checker_linux
 obj/*
+libft/obj/*

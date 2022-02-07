@@ -1,38 +1,51 @@
-NAME = libft.a
+NAME 		= libft.a
 
-SRC = ft_atoi.c ft_isdigit.c ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
-ft_lstiter.c ft_lstlast.c ft_lstnew.c ft_lstpop_back.c ft_lstpop_front.c \
-ft_lstsize.c ft_strlen.c ft_strncmp.c ft_substr.c ft_isspace.c ft_strdup.c \
-ft_strlcpy.c ft_split.c
+SRCS_LIST 	= 	ft_atoi.c \
+				ft_isdigit.c \
+				ft_isspace.c \
+				ft_strlen.c \
+				ft_strncmp.c \
+				ft_strdup.c \
+				ft_strlcpy.c \
+				ft_substr.c \
+				ft_lstadd_back.c \
+				ft_lstadd_front.c \
+				ft_lstpop_back.c \
+				ft_lstpop_front.c \
+				ft_lstclear.c \
+				ft_lstiter.c \
+				ft_lstlast.c \
+				ft_lstnew.c \
+				ft_lstsize.c
 
-FOLDER = src
+SRC_FOLDER		= src
 
-SRCS = $(addprefix ${FOLDER}/, ${SRC})
+OBJ_FOLDER		= obj
 
-OBJ = $(SRCS:.c=.o)
+SRCS 			= $(addprefix ${SRC_FOLDER}/, ${SRCS_LIST})
 
-RUNFLAGS = -Wall -Werror -Wextra
+OBJS 			= $(addprefix ${OBJ_FOLDER}/, ${SRCS:.c=.o})
 
-CFLAGS += -Wall -Werror -Wextra -I./ -c
+CFLAGS 			= -Werror -Wall -Wextra -I.
 
-.PHONY: all clean fclean re
+CC 				= gcc
 
-all:    $(NAME)
+.PHONY: all clean fclean re build_folder
 
-$(NAME): $(OBJ)
-	@gcc $(CFLAGS) $(SRCS)
-	@ar rc $(NAME) $(OBJ)
-	@rm *.o
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	@ar -rcs $(NAME) $(OBJS)
+
+$(OBJ_FOLDER)/%.o: %.c
+	@mkdir -p obj/src
+	$(CC) $(CFLAGS) -c -o $@ $<
+
 
 clean:
-	@rm -f $(OBJ)
+	@rm -rf $(OBJ_FOLDER)
 
 fclean: clean
 	@rm -f $(NAME)
 
-re:     fclean all
-
-test:
-	@gcc $(RUNFLAGS) $(TEST) ./$(NAME) \
-	&& ./a.out \
-	&& rm ./a.out
+re: fclean all

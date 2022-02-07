@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 20:11:25 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/02/06 02:08:16 by coder            ###   ########.fr       */
+/*   Updated: 2022/02/07 03:17:53 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,9 @@ void				ft_lstadd_front(t_list **lst, t_list *new);
 int					ft_lstpop_back(t_list **lst);
 int					ft_lstpop_front(t_list **lst);
 void				ft_lstclear(t_list **lst);
-void				ft_lstdelone(t_list *lst);
 void				ft_lstiter(t_list *lst, void (*f)(int));
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstnew(int content);
 int					ft_lstsize(t_list *lst);
-char				**ft_split(char const *s, char c);
 
 #endif
