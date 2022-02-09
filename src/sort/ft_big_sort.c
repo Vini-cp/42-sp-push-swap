@@ -6,138 +6,70 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 21:37:33 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/02/06 21:20:06 by coder            ###   ########.fr       */
+/*   Updated: 2022/02/09 18:28:37 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-static int	get_first_smallest_no(t_list *lst, int chunk, int no_chunk)
+static void	repopulate_a_stack(t_list **a, t_list **b, int chunck_size, int no_chunks)
 {
-	int	position;
-
-	position = 0;
-	while (lst->next)
-	{
-		if (lst->content < chunk * no_chunk)
-			return (position);
-		lst = lst->next;
-		position++;
-	}
-	return (0);
-}
-
-static int	get_last_smallest_no(t_list *lst, int chunk, int no_chunk)
-{
-	int	position;
 	int	i;
+	int size;
 
 	i = 0;
-	position = 0;
-	while (lst->next)
+	while (*b && i < no_chunks)
 	{
-		if (lst->content < chunk * no_chunk)
-			position = i;
-		lst = lst->next;
+		if (ft_lstsize(*b) / chunck_size == 0)
+			size = chunck_size;
+		else
+			size = ft_lstsize(*b) % chunck_size;
+		ft_move_to_stack_a(a, b, size);
 		i++;
 	}
-	return (position);
 }
 
-static int	get_first_biggest_no(t_list *lst)
+static void	populate_b_stack(t_list **a, t_list **b, int chunck_size, int no_chunks)
 {
-	int	position;
-	int	number;
-	int	i;
+	int i;
+	int j;
+	int delta_value;
+	int smallest_value;
 
 	i = 0;
-	position = 0;
-	number = lst->content;
-	while (lst && i < CHUNCK_NO)
+	smallest_value = ft_get_smallest_no(*a);
+	delta_value = (ft_get_biggest_no(*a) - smallest_value) / (no_chunks - 1);
+	while (*a && i < no_chunks)
 	{
-		if (lst->content > number)
+		while (*a && j < chunck_size)
 		{
-			position = i;
-			number = lst->content;
+			ft_move_to_stack_b(a, b, (smallest_value + delta_value * (i + 1)));
+			j++;
 		}
-		lst = lst->next;
 		i++;
 	}
-	return (position);
 }
 
-static void	move_no_to_stack_b(t_list **a, t_list **b, int size, int chunk)
+static int	calculate_chunck_size(t_list *a)
 {
-	int	i;
-	int	smallest_pos;
-	int	biggest_pos;
 	int	lst_size;
 
-	smallest_pos = get_first_smallest_no(*a, size, chunk);
-	biggest_pos = get_last_smallest_no(*a, size, chunk);
-	lst_size = ft_lstsize(*a);
-	i = 0;
-	if (smallest_pos <= (lst_size - biggest_pos - 1))
-		while (i++ < smallest_pos)
-			ft_movements(a, b, "ra");
-	else
-		while (i++ < (lst_size - biggest_pos))
-			ft_movements(a, b, "rra");
-	ft_movements(a, b, "pb");
-	if ((*b)->next != NULL && (*b)->content < (*b)->next->content)
-		ft_movements(a, b, "sb");
-}
-
-static void	move_no_to_stack_a(t_list **a, t_list **b)
-{
-	int	i;
-	int	first_biggest;
-
-	first_biggest = get_first_biggest_no(*b);
-	if (first_biggest == 1)
-		ft_movements(a, b, "sb");
-	else if (first_biggest > 1)
-	{
-		i = first_biggest;
-		while (i--)
-			ft_movements(a, b, "rb");
-	}
-	ft_movements(a, b, "pa");
-	if (first_biggest > 1)
-	{
-		i = first_biggest;
-		while (i--)
-			ft_movements(a, b, "rrb");
-	}
+	lst_size = ft_lstsize(a);
+	if (lst_size <= 100)
+		return (lst_size / 5);
+	return (lst_size / 11);
 }
 
 void	ft_big_sort(t_list **a, t_list **b)
 {
-	int	chunk_size;
-	int	chunks;
-	int	i;
+	int	chunck_size;
+	int	no_chunks;
 
-	chunk_size = (ft_get_biggest_no(*a) + ft_get_smallest_no(*a)) / CHUNCK_NO + 1;
-	chunks = 0;	
-	while (*a && chunks < CHUNCK_NO)
-	{
-		i = 0;
-		while (*a && i < chunk_size)
-		{
-			move_no_to_stack_b(a, b, chunk_size, chunks + 1);
-			i++;
-		}
-		chunks++;
-	}
-	chunks = CHUNCK_NO - 1;
-	while (*b && chunks > 0)
-	{
-		i = 0;
-		while (*b && i < chunk_size)
-		{
-			move_no_to_stack_a(a, b);
-			i++;
-		}
-		chunks--;
-	}
+	chunck_size = calculate_chunck_size(*a);
+	if (ft_lstsize(*a) / chunck_size == 0)
+		no_chunks = ft_lstsize(*a) / chunck_size;
+	else
+		no_chunks = ft_lstsize(*a) / chunck_size + 1;
+	populate_b_stack(a, b, chunck_size, no_chunks);
+	repopulate_a_stack(a, b, chunck_size, no_chunks);
 }

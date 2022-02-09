@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 22:56:00 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/02/06 21:20:35 by coder            ###   ########.fr       */
+/*   Updated: 2022/02/07 14:50:08 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	ft_rr(t_list **a, t_list **b, char *mov)
 
 void	ft_movements(t_list **a, t_list **b, char *mov)
 {
-	write(1, mov, 3);
+	write(1, mov, ft_strlen(mov));
 	write(1, "\n", 1);
 	if (mov[0] == 's')
 		ft_sw(a, b, mov);

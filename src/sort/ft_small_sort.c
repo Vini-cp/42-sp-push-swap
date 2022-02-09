@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 21:43:33 by vcordeir          #+#    #+#             */
-/*   Updated: 2022/02/06 21:19:54 by coder            ###   ########.fr       */
+/*   Updated: 2022/02/07 20:26:29 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,28 +21,25 @@ static int	compare(int a, int b)
 
 void	ft_small_sort(t_list **a, t_list **b)
 {
-	if (!ft_is_sorted(*a))
+	if (ft_lstsize(*a) == 2)
+		ft_movements(a, b, "sa");
+	else
 	{
-		if (ft_lstsize(*a) == 2)
-			ft_movements(a, b, "sa");
+		if (!compare((*a)->content, (*a)->next->content))
+		{
+			ft_movements(a, b, "rra");
+			if (compare((*a)->content, (*a)->next->content))
+				ft_movements(a, b, "sa");
+		}
 		else
 		{
-			if (!compare((*a)->content, (*a)->next->content))
-			{
-				ft_movements(a, b, "rra");
-				if (compare((*a)->content, (*a)->next->content))
-					ft_movements(a, b, "sa");
-			}
+			if (!compare((*a)->content, (*a)->next->next->content))
+				ft_movements(a, b, "sa");
 			else
 			{
-				if (!compare((*a)->content, (*a)->next->next->content))
+				ft_movements(a, b, "ra");
+				if (compare((*a)->content, (*a)->next->content))
 					ft_movements(a, b, "sa");
-				else
-				{
-					ft_movements(a, b, "ra");
-					if (compare((*a)->content, (*a)->next->content))
-						ft_movements(a, b, "sa");
-				}
 			}
 		}
 	}

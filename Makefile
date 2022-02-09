@@ -9,6 +9,7 @@ SRCS_LIST 	= 	operations/ft_movements.c \
 				operations/ft_swap.c \
 				sort/ft_big_sort.c \
 				sort/ft_medium_sort.c \
+				sort/ft_radix_sort.c \
 				sort/ft_small_sort.c \
 				sort/ft_sort.c \
 				utils/ft_check_numbers.c \
@@ -18,6 +19,8 @@ SRCS_LIST 	= 	operations/ft_movements.c \
 				utils/ft_get_smallest_no.c \
 				utils/ft_initiate_stack.c \
 				utils/ft_is_sorted.c \
+				utils/ft_move_to_stack_a.c \
+				utils/ft_move_to_stack_b.c \
 				utils/ft_parse_numbers.c \
 				main.c
 
