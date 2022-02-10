@@ -6,15 +6,15 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 15:40:57 by coder             #+#    #+#             */
-/*   Updated: 2022/02/09 17:51:36 by coder            ###   ########.fr       */
+/*   Updated: 2022/02/10 21:36:04 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-static void push_to_b(t_list **a, t_list **b, int bit)
+static void	push_to_b(t_list **a, t_list **b, int bit)
 {
-	int lst_size;
+	int	lst_size;
 
 	lst_size = ft_lstsize(*a);
 	while (lst_size)
@@ -27,7 +27,7 @@ static void push_to_b(t_list **a, t_list **b, int bit)
 	}
 }
 
-static void push_to_a(t_list **a, t_list **b)
+static void	push_to_a(t_list **a, t_list **b)
 {
 	while (*b)
 		ft_movements(a, b, "pa");
@@ -35,7 +35,7 @@ static void push_to_a(t_list **a, t_list **b)
 
 static int	get_max_size(int nbr)
 {
-	int max_size;
+	int	max_size;
 
 	max_size = 0;
 	while (nbr > 0)
@@ -46,10 +46,10 @@ static int	get_max_size(int nbr)
 	return (max_size);
 }
 
-void ft_radix_sort(t_list **a, t_list **b)
+void	ft_radix_sort(t_list **a, t_list **b)
 {
-	int max_size;
-	int bit;
+	int	max_size;
+	int	bit;
 
 	max_size = get_max_size(ft_get_biggest_no(*a));
 	bit = 0;

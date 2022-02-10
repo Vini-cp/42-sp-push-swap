@@ -6,7 +6,7 @@
 /*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 01:57:31 by coder             #+#    #+#             */
-/*   Updated: 2022/02/09 18:26:08 by coder            ###   ########.fr       */
+/*   Updated: 2022/02/10 21:23:40 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # define FALSE 0
 # define SMALL_THRESHOLD 3
 # define MEDIUM_THRESHOLD 14
-# define CHUNCK_NO 20
+# define BIG_THRESHOLD 99
 
 t_list	*ft_initiate_stack(int argc, char *argv[]);
 int		ft_check_numbers(int argc, char *argv[]);

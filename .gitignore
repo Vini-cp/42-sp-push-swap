@@ -7,3 +7,5 @@ checker_mac
 checker_linux
 obj/*
 libft/obj/*
+resp
+test.py
