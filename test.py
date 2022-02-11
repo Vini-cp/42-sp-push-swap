@@ -18,6 +18,7 @@ def personal_checker(init: int, end: int, step: int):
 
 
 if __name__ == '__main__':
+	os.system("rm resp")
 	personal_checker(0, 15, 1)
 	personal_checker(15, 100, 5)
 	personal_checker(99, 599, 100)
